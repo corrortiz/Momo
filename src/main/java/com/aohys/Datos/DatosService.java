@@ -3,6 +3,9 @@ package com.aohys.Datos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+
 @Service
 public class DatosService {
     DatosRepository datosRepository;
@@ -16,6 +19,7 @@ public class DatosService {
     }
 
     public Datos addEntity(Datos datos) {
+        datos.setFecha(Timestamp.valueOf(LocalDateTime.now()));
         return datosRepository.save(datos);
     }
 

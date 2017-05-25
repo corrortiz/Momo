@@ -1,8 +1,7 @@
 package com.aohys.Datos;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Timestamp;
 
 @Entity
 public class Datos {
@@ -13,10 +12,9 @@ public class Datos {
     private String nombre;
     private String apellidoPaterno;
     private String apellidoMaterno;
-    @Temporal(TemporalType.TIMESTAMP)
-    private Date fecha;
+    private Timestamp fecha;
 
-    public Datos(String nombre, String apellidoPaterno, String apellidoMaterno, Date fecha) {
+    public Datos(String nombre, String apellidoPaterno, String apellidoMaterno, Timestamp fecha) {
         this.nombre = nombre;
         this.apellidoPaterno = apellidoPaterno;
         this.apellidoMaterno = apellidoMaterno;
@@ -58,11 +56,11 @@ public class Datos {
         this.apellidoMaterno = apellidoMaterno;
     }
 
-    public Date getFecha() {
+    public Timestamp getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
-        this.fecha = java.sql.Date.valueOf(LocalDate.now());
+    public void setFecha(Timestamp fecha) {
+        this.fecha = fecha;
     }
 }
