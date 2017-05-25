@@ -1,6 +1,7 @@
 package com.aohys.Datos;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -62,6 +63,6 @@ public class Datos {
     }
 
     public void setFecha(Date fecha) {
-        this.fecha = fecha;
+        this.fecha = java.sql.Date.valueOf(LocalDate.now());
     }
 }
