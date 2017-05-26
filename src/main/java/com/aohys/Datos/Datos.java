@@ -8,18 +8,22 @@ public class Datos {
     @Id
     @GeneratedValue
     private Long datosId;
+    private String piso;
+    private String nombrePaciente;
+    private String rfcPaciente;
+    private String servicioResponsable;
+    private String numeroDeCama;
+    private String tipoDeEstudio;
+    private String servicioSolicitante;
+    private String personalSolicitanteDeEstudios;
 
-    private String nombre;
-    private String apellidoPaterno;
-    private String apellidoMaterno;
+    private boolean estudioFueAtendido;
+    private String personalQueAtendioElEstudio;
+
+    @Column(columnDefinition = "TEXT")
+    private String notasAdicionales;
     private Timestamp fecha;
 
-    public Datos(String nombre, String apellidoPaterno, String apellidoMaterno, Timestamp fecha) {
-        this.nombre = nombre;
-        this.apellidoPaterno = apellidoPaterno;
-        this.apellidoMaterno = apellidoMaterno;
-        this.fecha = fecha;
-    }
 
     public Datos() {
     }
@@ -32,28 +36,60 @@ public class Datos {
         this.datosId = datosId;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getPiso() {
+        return piso;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setPiso(String piso) {
+        this.piso = piso;
     }
 
-    public String getApellidoPaterno() {
-        return apellidoPaterno;
+    public String getNombrePaciente() {
+        return nombrePaciente;
     }
 
-    public void setApellidoPaterno(String apellidoPaterno) {
-        this.apellidoPaterno = apellidoPaterno;
+    public void setNombrePaciente(String nombrePaciente) {
+        this.nombrePaciente = nombrePaciente;
     }
 
-    public String getApellidoMaterno() {
-        return apellidoMaterno;
+    public String getRfcPaciente() {
+        return rfcPaciente;
     }
 
-    public void setApellidoMaterno(String apellidoMaterno) {
-        this.apellidoMaterno = apellidoMaterno;
+    public void setRfcPaciente(String rfcPaciente) {
+        this.rfcPaciente = rfcPaciente;
+    }
+
+    public String getTipoDeEstudio() {
+        return tipoDeEstudio;
+    }
+
+    public void setTipoDeEstudio(String tipoDeEstudio) {
+        this.tipoDeEstudio = tipoDeEstudio;
+    }
+
+    public String getServicioSolicitante() {
+        return servicioSolicitante;
+    }
+
+    public void setServicioSolicitante(String servicioSolicitante) {
+        this.servicioSolicitante = servicioSolicitante;
+    }
+
+    public String getPersonalSolicitanteDeEstudios() {
+        return personalSolicitanteDeEstudios;
+    }
+
+    public void setPersonalSolicitanteDeEstudios(String personalSolicitanteDeEstudios) {
+        this.personalSolicitanteDeEstudios = personalSolicitanteDeEstudios;
+    }
+
+    public String getNotasAdicionales() {
+        return notasAdicionales;
+    }
+
+    public void setNotasAdicionales(String notasAdicionales) {
+        this.notasAdicionales = notasAdicionales;
     }
 
     public Timestamp getFecha() {
@@ -62,5 +98,37 @@ public class Datos {
 
     public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
+    }
+
+    public String getServicioResponsable() {
+        return servicioResponsable;
+    }
+
+    public void setServicioResponsable(String servicioResponsable) {
+        this.servicioResponsable = servicioResponsable;
+    }
+
+    public String getNumeroDeCama() {
+        return numeroDeCama;
+    }
+
+    public void setNumeroDeCama(String numeroDeCama) {
+        this.numeroDeCama = numeroDeCama;
+    }
+
+    public boolean isEstudioFueAtendido() {
+        return estudioFueAtendido;
+    }
+
+    public void setEstudioFueAtendido(boolean estudioFueAtendido) {
+        this.estudioFueAtendido = estudioFueAtendido;
+    }
+
+    public String getPersonalQueAtendioElEstudio() {
+        return personalQueAtendioElEstudio;
+    }
+
+    public void setPersonalQueAtendioElEstudio(String personalQueAtendioElEstudio) {
+        this.personalQueAtendioElEstudio = personalQueAtendioElEstudio;
     }
 }

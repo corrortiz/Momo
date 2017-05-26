@@ -3,6 +3,8 @@ package com.aohys.Datos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @CrossOrigin
 @RequestMapping("api/datos")
@@ -14,6 +16,11 @@ public class DatosController {
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
+    public List<Datos> listaNoAtendidos(){
+        return datosService.allOrderNoAtendidos();
+    }
+
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public Iterable<Datos> list(){
         return datosService.getAll();
     }
